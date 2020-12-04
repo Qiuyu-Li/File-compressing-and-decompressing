@@ -18,11 +18,28 @@
 
 This project is created for compressing and decompressing the given text file using three approaches, or three types of dictionaries: naive list, BST(Red-Black Tree) and chained hash table.
 
-- Compressing a file: Suppose we have a large document with many repeated long strings. A simple way to compress the file is to replace frequently occurring words with a simple abbreviation. Therefore, a dictionary is to be built to store the abbreviations of each word.
+### Description of the question
 
-- Decompressing a file: Restore the original file with the compressed file and the dictionary.
+Imagine we have a large document with many repeated long strings. A simple way to compress the file is to replace frequently occurring words with a simple abbreviation. For example in the text:
 
-- Feature of the test file `test_document.txt`: A moderate size text file with only words, ',', '.' and whitespace. 
+>But good morning! Good morning to ye and thou! I’d say to all my patients, because I was the worst of the hypocrites, of all the hypocrites, the cruel and phony hypocrites, I was the very worst.
+
+If we create a simple rule, e.g., that all words with at least four characters and one or more occurrence are encoded, then we might encode according the following abbreviation table:
+
+| word        | occurrences | byte code |
+|-------------|-------------|-----------|
+| hyprocrites |      3      |     1     |
+| morning     |      2      |     2     |
+| good        |      2      |     3     |
+| worst       |      2      |     4     |
+
+and thus the encoded document becomes:
+
+>But 3 2! 3 2 to ye and thou! I’d say to all my patients, because I was the 4 of the 1, of all the 1, the cruel and phony 1, I was the very 4.
+
+Of course, the compressed file would also have to encode the translation table so that it could be uncompressed.
+
+### Introduction of the project
 
 I create three `test_*.c` (test_naive.c, test_tree.c, test_chtbl.c) files for each of the approaches, and related data structures to achive the purpose. If successfully run, each of the test program will produce below output:
 
