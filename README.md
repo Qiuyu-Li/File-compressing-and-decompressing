@@ -17,6 +17,13 @@
 ## Introduction
 
 This project is created for compressing and decompressing the given text file using three approaches, or three types of dictionaries: naive list, BST(Red-Black Tree) and chained hash table.
+
+- Compressing a file: Suppose we have a large document with many repeated long strings. A simple way to compress the file is to replace frequently occurring words with a simple abbreviation. Therefore, a dictionary is to be built to store the abbreviations of each word.
+
+- Decompressing a file: Restore the original file with the compressed file and the dictionary.
+
+- Feature of the test file `test_document.txt`: A moderate size text file with only words, ',', '.' and whitespace. 
+
 I create three `test_*.c` (test_naive.c, test_tree.c, test_chtbl.c) files for each of the approaches, and related data structures to achive the purpose. If successfully run, each of the test program will produce below output:
 
 1. dict.txt: a dictionary text file that prints the dictionary table(the occurance times and abbreviation of each word). The BST dictionary is printed in the terminal instead of a text file. The hash dictionary prints words contained in each bin (I recommend not to open it).
